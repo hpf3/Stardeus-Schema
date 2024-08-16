@@ -1,8 +1,10 @@
 # Stardeus Schema
 
 This repository contains unofficial, community-maintained JSON schema definitions for validating and developing mods for *Stardeus*.
-
+last edited for game version 0.11.18
 > **⚠️ Warning**: These schemas are community-developed and may not cover all edge cases or be fully comprehensive. They are designed to help catch basic errors but do not ensure that your mod will function correctly.
+
+only the device and research schemas are currently done
 
 ## Table of Contents
 
@@ -36,7 +38,27 @@ To start using the JSON schemas in this repository, follow these steps:
 
 You can use Visual Studio Code's built-in JSON validator to validate your mod files against the schemas in this repository.
 
->**NOTE**: url based usage instructions are planned for the future
+Alternatively, you can add the following to your `.code-workspace` file:
+```json
+	"settings": {
+		"json.validate.enable":true,
+		"json.schemaDownload.enable": true,
+		"json.schemas": [
+			{
+				"fileMatch": [
+					"Definitions/Objects/Devices/*.json"
+				],
+				"url": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/Obj-Devices.schema.json"
+			},
+			{
+				"fileMatch": [
+					"Definitions/Research/*/*.json"
+				],
+				"url": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/research.schema.json"
+			}
+		],
+	}
+```
 
 ## Contributing
 
