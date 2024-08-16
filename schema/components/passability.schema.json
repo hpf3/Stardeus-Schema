@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "Passability"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "IsPassable",
+                            "IsWalkable",
+                            "Difficulty"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "IsPassable"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "IsWalkable"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "Difficulty"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Float"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["Component", "Properties"]
+}

@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "Constructable"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "WorkAmount",
+                            "CanReplaceGroup",
+                            "CanDragRow",
+                            "Contents",
+                            "Placement",
+                            "PlacementGroup"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "WorkAmount"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Int"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "CanReplaceGroup",
+                                        "PlacementGroup"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/String"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "CanDragRow"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "Contents"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/RawMaterials"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "Placement"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Placement"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "Component",
+        "Properties"
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "Toilet"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "HideUI",
+                            "IsMakeshift",
+                            "HideBeing",
+                            "IsForHumans",
+                            "RequiresSafeArea"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "HideUI",
+                                        "IsMakeshift",
+                                        "HideBeing",
+                                        "IsForHumans",
+                                        "RequiresSafeArea"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["Component", "Properties"]
+}

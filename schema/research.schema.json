@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Id": {
+            "type": "string"
+        },
+        "Tier": {
+            "type": "integer"
+        },
+        "IsAbstract": {
+            "type": "boolean"
+        },
+        "PreviewIcon": {
+            "type": "string"
+        },
+        "NameKey": {
+            "type": "string"
+        },
+        "Researchable": {
+            "type": "object",
+            "properties": {
+                "IsTreeNode": {
+                    "type": "boolean"
+                },
+                "Prerequisites": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DatoidCosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "TypeId": {
+                                "type": "string",
+                                "enum": [
+                                    "DatoidBasic",
+                                    "DatoidTech",
+                                    "DatoidEnergy",
+                                    "DatoidTechHigh",
+                                    "DatoidSynthetic",
+                                    "DatoidQuantum",
+                                    "DatoidAlien",
+                                    "DatoidNuclear",
+                                    "DatoidBiotic"
+                                ]
+                            },
+                            "StackSize": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "TypeId",
+                            "StackSize"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "UnlockEffects": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "IsTreeNode"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "Id",
+        "Tier",
+        "IsAbstract",
+        "PreviewIcon",
+        "Researchable"
+    ],
+    "additionalProperties": false
+}

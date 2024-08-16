@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "OxygenProducer"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "Rate",
+                            "Range",
+                            "FuelPerDay",
+                            "EnergyCost"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "Rate",
+                                        "FuelPerDay",
+                                        "EnergyCost"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Float"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "Range"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Int"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["Component", "Properties"]
+}

@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "SuicideBooth"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "HideBeing",
+                            "SlotUseWorkSpot"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "HideBeing",
+                                        "SlotUseWorkSpot"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "Component",
+        "Properties"
+    ]
+}

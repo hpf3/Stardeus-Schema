@@ -1,0 +1,255 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Int": {
+            "type": "object",
+            "properties": {
+                "Int": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "Int"
+            ]
+        },
+        "IntSet": {
+            "type": "object",
+            "properties": {
+                "IntSet": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "required": [
+                "IntSet"
+            ]
+        },
+        "Float": {
+            "type": "object",
+            "properties": {
+                "Float": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Float"
+            ]
+        },
+        "FloatSet": {
+            "type": "object",
+            "properties": {
+                "FloatSet": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "FloatSet"
+            ]
+        },
+        "Bool": {
+            "type": "object",
+            "properties": {
+                "Bool": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Bool"
+            ]
+        },
+        "String": {
+            "type": "object",
+            "properties": {
+                "String": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "String"
+            ]
+        },
+        "StringSet": {
+            "type": "object",
+            "properties": {
+                "StringSet": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "StringSet"
+            ]
+        },
+        "Curve": {
+            "type": "object",
+            "properties": {
+                "String": {
+                    "type": "string",
+                    "enum": [
+                        "FlammabilityCurve_DeviceLow",
+                        "FlammabilityCurve_Device",
+                        "FlammabilityCurve_DeviceHigh",
+                        "ExplosivenessCurve_DeviceLow",
+                        "ExplosivenessCurve_Device",
+                        "ExplosivenessCurve_DeviceHigh",
+                        "ExplosivenessCurve_ShipComputer"
+                    ]
+                }
+            },
+            "required": [
+                "String"
+            ]
+        },
+        "Vector2": {
+            "type": "object",
+            "properties": {
+                "Vector2": {
+                    "type": "object",
+                    "properties": {
+                        "x": {
+                            "type": "number"
+                        },
+                        "y": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "x",
+                        "y"
+                    ]
+                }
+            },
+            "required": [
+                "Vector2"
+            ]
+        },
+        "Vector2Set": {
+            "type": "object",
+            "properties": {
+                "Vector2Set": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "x": {
+                                "type": "number"
+                            },
+                            "y": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "x",
+                            "y"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "Vector2Set"
+            ]
+        },
+        "RawMaterials": {
+            "type": "object",
+            "properties": {
+                "RawMaterials": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "TypeId": {
+                                "type": "string"
+                            },
+                            "StackSize": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "TypeId",
+                            "StackSize"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "RawMaterials"
+            ]
+        },
+        "JobType": {
+            "type": "object",
+            "properties": {
+                "String": {
+                    "type": "string",
+                    "enum": [
+                        "Piloting",
+                        "Cooking",
+                        "Social",
+                        "Crafting",
+                        "Robotics",
+                        "Research",
+                        "Medical",
+                        "Task"
+                    ]
+                }
+            },
+            "required": [
+                "String"
+            ]
+        },
+        "AnimationType": {
+            "type": "object",
+            "properties": {
+                "String": {
+                    "type": "string",
+                    "enum": [
+                        "Strafe"
+                    ]
+                }
+            },
+            "required": [
+                "String"
+            ]
+        },
+        "Placement": {
+            "type": "object",
+            "properties": {
+                "String": {
+                    "type": "string",
+                    "enum": [
+                        "OnFloor",
+                        "NearShipComputer",
+                        "InSpaceAttached",
+                        "InSpaceAttachedChained"
+                    ]
+                }
+            },
+            "required": [
+                "String"
+            ]
+        },
+        "Projectile": {
+            "type": "object",
+            "properties": {
+                "String": {
+                    "type": "string",
+                    "enum": [
+                        "HeavyEnergy"
+                    ]
+                }
+            },
+            "required": [
+                "String"
+            ]
+        }
+    }
+}

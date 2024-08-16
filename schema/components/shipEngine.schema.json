@@ -1,0 +1,114 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "ShipEngine"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "Power",
+                            "EnergyCost",
+                            "FlameSize",
+                            "WorksIn",
+                            "LegacyEmissionEffect",
+                            "IsManeuvering",
+                            "ManeuveringChargeHours",
+                            "ManeuveringChargeCost",
+                            "ParticleLifeTime"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "Power",
+                                        "EnergyCost",
+                                        "ManeuveringChargeCost",
+                                        "ParticleLifeTime"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Float"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "FlameSize"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Vector2"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "WorksIn"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/StringSet"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "LegacyEmissionEffect"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/String"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "IsManeuvering"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "ManeuveringChargeHours"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Int"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["Component", "Properties"]
+}

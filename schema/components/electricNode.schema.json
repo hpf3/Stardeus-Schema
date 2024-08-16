@@ -1,0 +1,128 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "ElectricNode"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "IsBattery",
+                            "IsConsumer",
+                            "IsConsumerHighPriority",
+                            "IsConsumerLowPriority",
+                            "IsSwitchable",
+                            "IsConnector",
+                            "IsProducerSmart",
+                            "IsShipComputer",
+                            "IsProducer",
+                            "ShowZeroProduction",
+                            "BatteryMaxCharge",
+                            "MaxConnections",
+                            "ConnectorRange",
+                            "Particles",
+                            "Particles_D",
+                            "Particles_U",
+                            "Particles_L",
+                            "Particles_R",
+                            "ParticlesEmitChance",
+                            "ParticleOffsets"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "IsBattery",
+                                        "IsConsumer",
+                                        "IsConsumerHighPriority",
+                                        "IsConsumerLowPriority",
+                                        "IsSwitchable",
+                                        "IsConnector",
+                                        "ShowZeroProduction",
+                                        "IsProducerSmart",
+                                        "IsShipComputer",
+                                        "IsProducer"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "BatteryMaxCharge",
+                                        "MaxConnections",
+                                        "ConnectorRange"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Int"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "Particles",
+                                        "Particles_D",
+                                        "Particles_U",
+                                        "Particles_L",
+                                        "Particles_R"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/String"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "ParticlesEmitChance"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Float"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "ParticleOffsets"
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Vector2Set"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "Component",
+        "Properties"
+    ]
+}

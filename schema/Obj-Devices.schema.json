@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "SkipToolListing": { "type": "boolean" },
+      "ToolPath": { "type": "string" },
+      "Layer": { "type": "string" },
+      "Tier": { "type": "integer" },
+      "IsUnfinished": { "type": "boolean" },
+      "IsAbstract": { "type": "boolean" },
+      "ResearchValue": { "type": "integer" },
+      "ParentId": { "type": "string" },
+      "IsImportant": { "type": "boolean" },
+      "TranslationVars": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "Researchable": {
+        "type": "object",
+        "properties": {
+          "Prerequisites": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["Prerequisites"]
+      },
+      "Spawnable": {
+        "type": "object",
+        "properties": {
+          "Chance": { "type": "number" },
+          "ChanceLocked": { "type": "number" }
+        },
+        "required": ["Chance", "ChanceLocked"]
+      },
+      "Components": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            { "$ref": "./components/emptyComp.schema.json" },
+            { "$ref": "./components/tiletransform.schema.json" },
+            { "$ref": "./components/flammable.schema.json" },
+            { "$ref": "./components/tileGraphics.schema.json" },
+            { "$ref": "./components/surface.schema.json" },
+            { "$ref": "./components/battery.schema.json" },
+            { "$ref": "./components/electricNode.schema.json" },
+            { "$ref": "./components/audioSource.schema.json"},
+            { "$ref": "./components/passability.schema.json" },
+            { "$ref": "./components/lightSource.schema.json"},
+            { "$ref": "./components/constructable.schema.json" },
+            { "$ref": "./components/storage.schema.json"},
+            { "$ref": "./components/haulTarget.schema.json"},
+            { "$ref": "./components/vFX.schema.json"},
+            { "$ref": "./components/bridgeControls.schema.json"},
+            { "$ref": "./components/operatableDevice.schema.json"},
+            { "$ref": "./components/crafter.schema.json"},
+            { "$ref": "./components/heatProducer.schema.json"},
+            { "$ref": "./components/processorModule.schema.json"},
+            { "$ref": "./components/turret.schema.json"},
+            { "$ref": "./components/disposer.schema.json"},
+            { "$ref": "./components/outdoorsCheck.schema.json"},
+            { "$ref": "./components/refillableStorage.schema.json"},
+            { "$ref": "./components/poweredStorage.schema.json"},
+            { "$ref": "./components/shipEngine.schema.json"},
+            { "$ref": "./components/damageable.schema.json"},
+            { "$ref": "./components/reinstallable.schema.json"},
+            { "$ref": "./components/heater.schema.json"},
+            { "$ref": "./components/bodyModSpot.schema.json"},
+            { "$ref": "./components/autoDoc.schema.json"},
+            { "$ref": "./components/jukebox.schema.json"},
+            { "$ref": "./components/matterReactor.schema.json"},
+            { "$ref": "./components/mlBooth.schema.json"},
+            { "$ref": "./components/oxygenProducer.schema.json"},
+            { "$ref": "./components/rawMaterialGenerator.schema.json"},
+            { "$ref": "./components/admirable.schema.json"},
+            { "$ref": "./components/planter.schema.json"},
+            { "$ref": "./components/toilet.schema.json"},
+            { "$ref": "./components/particleTrail.schema.json"},
+            { "$ref": "./components/forceField.schema.json"},
+            { "$ref": "./components/radar.schema.json"},
+            { "$ref": "./components/shower.schema.json"},
+            { "$ref": "./components/cleanable.schema.json"},
+            { "$ref": "./components/shuttle.schema.json"},
+            { "$ref": "./components/bed.schema.json"},
+            { "$ref": "./components/solarPanel.schema.json"},
+            { "$ref": "./components/particles.schema.json"},
+            { "$ref": "./components/stasisArrayMatrix.schema.json"},
+            { "$ref": "./components/suicideBooth.schema.json"},
+            { "$ref": "./components/teleporter.schema.json"},
+            { "$ref": "./components/tileLabel.schema.json"},
+            { "$ref": "./components/terraformer.schema.json"},
+            { "$ref": "./components/treadmill.schema.json"}
+          ]
+        },
+        "minItems": 1
+      }
+    },
+    "required": ["ParentId", "Components"],
+    "additionalProperties": false
+  }

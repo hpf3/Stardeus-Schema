@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "Terraformer"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "Type"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "const": "Type"
+                                }
+                            }
+                        },
+                        "then": {
+                            "type": "object",
+                            "properties": {
+                                "String": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Oceans",
+                                        "Atmosphere",
+                                        "Biosphere",
+                                        "Terrain"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "String"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "Component",
+        "Properties"
+    ]
+}

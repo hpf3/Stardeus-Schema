@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "Cleanable"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "DirtCapacity",
+                            "CleanPriority",
+                            "DirtyThreshold",
+                            "AutocleanAmount",
+                            "DirtToMaterialRate",
+                            "Byproduct",
+                            "BarColor",
+                            "TextKey",
+                            "GoalKey",
+                            "DirtyKey",
+                            "AmountKey",
+                            "BarKey",
+                            "WarningKey",
+                            "SpawnByproductForEverySubPos",
+                            "AutoHaulByproduct",
+                            "AdFlyingOnly",
+                            "HasBar"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "DirtCapacity",
+                                        "CleanPriority"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Int"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "DirtyThreshold",
+                                        "AutocleanAmount",
+                                        "DirtToMaterialRate"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Float"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "Byproduct",
+                                        "BarColor",
+                                        "TextKey",
+                                        "GoalKey",
+                                        "DirtyKey",
+                                        "AmountKey",
+                                        "BarKey",
+                                        "WarningKey"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/String"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "SpawnByproductForEverySubPos",
+                                        "AutoHaulByproduct",
+                                        "AdFlyingOnly",
+                                        "HasBar"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "Component",
+        "Properties"
+    ]
+}

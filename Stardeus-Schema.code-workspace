@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "//media/nvme/hpf3/Steam/steamapps/common/Stardeus/Stardeus_Data/StreamingAssets/Mods/Core"
+		}
+	],
+	"settings": {
+		"json.validate.enable":true,
+		"json.schemas": [
+			{
+				"fileMatch": [
+					"Definitions/Objects/Devices/*.json"
+				],
+				"url": "./schema/Obj-Devices.schema.json"
+			},
+			{
+				"fileMatch": [
+					"Definitions/Research/*/*.json"
+				],
+				"url": "./schema/research.schema.json"
+			}
+		],
+	}
+}

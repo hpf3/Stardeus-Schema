@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "const": "AutoDoc"
+        },
+        "Properties": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Key": {
+                        "enum": [
+                            "HideBeing",
+                            "SlotUseWorkSpot",
+                            "WoundHealRateAddPctPerHour",
+                            "BloodClotRateAddPctPerHour",
+                            "BloodRegenRateAddPctPerHour",
+                            "IntestinesIncreasePerHour",
+                            "ToiletIncreasePerHour",
+                            "HygieneIncreasePerHour"
+                        ]
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "HideBeing",
+                                        "SlotUseWorkSpot"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Bool"
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "Key": {
+                                    "enum": [
+                                        "WoundHealRateAddPctPerHour",
+                                        "BloodClotRateAddPctPerHour",
+                                        "BloodRegenRateAddPctPerHour",
+                                        "IntestinesIncreasePerHour",
+                                        "ToiletIncreasePerHour",
+                                        "HygieneIncreasePerHour"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "$ref": "../types.schema.json#/definitions/Float"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["Component", "Properties"]
+}

@@ -1,0 +1,39 @@
+name: Update Schema with Replacements
+
+on:
+  push:
+    branches:
+      - main  # Triggers when changes are pushed to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Switch to stable-web branch
+      - name: Switch to stable-web branch
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git checkout main
+          git pull origin main
+          git checkout -b stable-web || git checkout stable-web
+
+      # Step to apply multiple replacements from a reference file
+      - name: Apply find & replace from replacements.txt
+        run: |
+          while IFS="=>" read -r find replace; do
+            find . -name "*.schema.json" -exec sed -i "s|$find|$replace|g" {} +
+          done < replacements.txt
+
+      # Commit the changes
+      - name: Commit and Push changes
+        run: |
+          git add .
+          git commit -m "Update schema with find & replace pairs $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push --set-upstream origin stable-web

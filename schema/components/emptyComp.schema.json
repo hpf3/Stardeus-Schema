@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Component": {
+            "enum": [
+                "SafetyCheck",
+                "Upgrades",
+                "Reinstallable",
+                "TileLabel",
+                "BotDock",
+                "DevDebug",
+                "Damageable",
+                "BreachCapsule",
+                "OutdoorsCheck",
+                "Copter",
+                "ExtraInfo",
+                "ChargeStation",
+                "Communicator",
+                "EmergencySiren",
+                "FluidCannon",
+                "HeatSink",
+                "ResourceMiner",
+                "Tinter",
+                "ObjHaulTarget",
+                "Probe",
+                "CurrencyMiner",
+                "ShipComputer",
+                "ShipComputerEfficiency",
+                "RepairStation",
+                "MindTransfer",
+                "SecurityControls",
+                "StasisArray",
+                "StasisPodMerchant",
+                "StasisPod",
+                "Telescope",
+                "TerraformControls",
+                "TractorBeam",
+                "VoidRipper",
+                "WinchAnchor",
+                "WinchHook",
+                "Xenodetector"
+            ]
+        }
+    },
+    "required": ["Component"],
+    "additionalProperties": false
+}
