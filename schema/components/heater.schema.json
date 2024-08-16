@@ -29,7 +29,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Int"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Int"
                         }
                     },
                     {
@@ -44,7 +44,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Float"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Float"
                         }
                     },
                     {
@@ -56,7 +56,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Bool"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Bool"
                         }
                     }
                 ]

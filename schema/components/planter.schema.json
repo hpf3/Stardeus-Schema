@@ -31,7 +31,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/StringSet"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/StringSet"
                         }
                     },
                     {
@@ -47,7 +47,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Int"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Int"
                         }
                     },
                     {
@@ -62,7 +62,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Vector2Set"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Vector2Set"
                         }
                     }
                 ]

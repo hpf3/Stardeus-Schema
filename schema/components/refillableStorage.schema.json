@@ -39,7 +39,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/String"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/String"
                         }
                     },
                     {
@@ -51,7 +51,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Bool"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Bool"
                         }
                     },
                     {
@@ -63,7 +63,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Int"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Int"
                         }
                     },
                     {
@@ -75,7 +75,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/StringSet"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/StringSet"
                         }
                     }
                 ]

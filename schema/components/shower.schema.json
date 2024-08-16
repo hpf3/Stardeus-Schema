@@ -30,7 +30,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Bool"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Bool"
                         }
                     }
                 ]

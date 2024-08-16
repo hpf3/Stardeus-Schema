@@ -36,7 +36,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Float"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Float"
                         }
                     },
                     {
@@ -51,7 +51,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/IntSet"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/IntSet"
                         }
                     },
                     {
@@ -67,7 +67,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Bool"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Bool"
                         }
                     },
                     {
@@ -79,7 +79,7 @@
                             }
                         },
                         "then": {
-                            "$ref": "../types.schema.json#/definitions/Vector2"
+                            "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/types.schema.json#/definitions/Vector2"
                         }
                     }
                 ]
