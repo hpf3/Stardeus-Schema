@@ -15,21 +15,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Switch to stable-web branch
+      # Switch to stable-web branch or create it if it doesn't exist
       - name: Switch to stable-web branch
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git checkout main
           git pull origin main
-          git checkout -b stable-web || git checkout stable-web
+          git fetch --all
+          if git rev-parse --verify stable-web; then
+            git checkout stable-web
+          else
+            git checkout -b stable-web
+          fi
 
-      # Step to apply multiple replacements from a reference file
-      - name: Apply find & replace from replacements.txt
+      # Step to apply multiple replacements from a reference file with escaping
+      - name: Apply find & replace with escaping
         run: |
-          while IFS="=>" read -r find replace; do
-            find . -name "*.schema.json" -exec sed -i "s|$find|$replace|g" {} +
-          done < replacements.txt
+          ./replace.sh
+
+
 
       # Commit the changes
       - name: Commit and Push changes

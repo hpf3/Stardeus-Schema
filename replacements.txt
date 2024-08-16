@@ -1,1 +1,2 @@
-./ => https://raw.githubusercontent.com/your-repo/main/
+"$ref": "./ = "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/
+"$ref": "../ = "$ref": "https://raw.githubusercontent.com/hpf3/Stardeus-Schema/stable-web/schema/
